@@ -3,6 +3,10 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
+import About from './components/About';
+
+
 import './styles.css';
 
 const App = () => {
@@ -10,8 +14,12 @@ const App = () => {
     <div>
       <Header />
       <Hero />
+      <About />
       <Features />
+      <Contact />
       <Footer />
+      
+      
     </div>
   );
 };
