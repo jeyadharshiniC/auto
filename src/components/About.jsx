@@ -1,5 +1,4 @@
-// src/components/About.js
-// import React from 'react';
+
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const About = () => {
