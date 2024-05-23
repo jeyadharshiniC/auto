@@ -15,16 +15,14 @@ const App = () => {
       <Header />
       <Hero />
       <About />
+      
       <Features />
       <Contact />
       <Footer />
-      
-      
     </div>
   );
 };
 
 export default App;
-
 
 
