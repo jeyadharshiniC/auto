@@ -30,7 +30,8 @@ const Contact = () => {
               <PhoneIcon sx={{ fontSize: 40, mr: 2, color: '#4caf50' }} />
               <Typography variant="h6" gutterBottom>Phone</Typography>
             </Box>
-            <Typography variant="body1">+123 456 7890</Typography>
+            <Typography variant="body1">9345861036 </Typography>
+            
           </Grid>
           <Grid item xs={12}>
             <Typography variant="h6" gutterBottom>Send us a Message</Typography>

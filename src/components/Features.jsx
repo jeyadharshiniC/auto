@@ -1,60 +1,80 @@
 // src/components/Features.js
-import React from 'react';
-import { Box, Container, Typography, Grid, Paper } from '@mui/material';
-import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
-import SecurityIcon from '@mui/icons-material/Security';
-import PaymentIcon from '@mui/icons-material/Payment';
+import React, { useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Slide from '@mui/material/Slide';
 
-const features = [
+const featuresData = [
   {
-    icon: <LocalTaxiIcon sx={{ fontSize: 40, color: '#4caf50' }} />,
-    title: "Convenient Rides",
-    description: "Book rides easily with just a few taps on your smartphone."
+    title: 'Reliable Rides',
+    description: "Reliable Rides with @eauto ensure a safe and dependable travel experience. Our extensive network of drivers and vehicles guarantees timely and efficient service. Whether for daily commutes or special occasions, Ola prioritizes reliability, offering a seamless booking process, real-time tracking, and professional drivers for stress-free journeys every time.",
   },
   {
-    icon: <SecurityIcon sx={{ fontSize: 40, color: '#4caf50' }} />,
-    title: "Safety First",
-    description: "Your safety is our priority. All rides are tracked and drivers are verified."
+    title: 'Safety First',
+    description: "Safety First - Your safety is our top priority. Our rides adhere to strict safety protocols, including regular vehicle inspections, background checks for drivers, and adherence to hygiene standards. We also provide in-app safety features like SOS buttons and live tracking to ensure a secure and worry-free journey.",
   },
   {
-    icon: <PaymentIcon sx={{ fontSize: 40, color: '#4caf50' }} />,
-    title: "Multiple Payment Options",
-    description: "Pay with cash, card, or digital wallets for your convenience."
-  }
+    title: '24/7 Support',
+    description: "24/7 Support - @eauto is committed to providing round-the-clock assistance for all your needs. Our dedicated support team is available 24/7 to address any queries, issues, or emergencies. Whether you need help with a booking, have a question, or face an unexpected situation, we're here to support you anytime, anywhere.",
+  },
 ];
 
 const Features = () => {
+  const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeatureIndex((prevIndex) => (prevIndex + 1) % featuresData.length);
+    }, 5000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Box
-      sx={{
-        py: 8,
-        bgcolor: '#e8f5e9',
-        color: 'black',
-      }}
-    >
+    py={3} 
+    bgcolor= '#4caf50' 
+    color= '#4caf50'
+    overflow='hidden'
+    position='relative'
+  >
+    <Box sx={{ py: 5, bgcolor: '#e8f5e9', color:'#4caf50' }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ color: '#4caf50' }}>
+        <Typography variant="h4" component="h2" gutterBottom align="center">
           Our Features
         </Typography>
         <Grid container spacing={4}>
-          {features.map((feature, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Paper elevation={3} sx={{ p: 3, textAlign: 'center', bgcolor: 'white' }}>
-                {feature.icon}
-                <Typography variant="h6" component="h2" gutterBottom>
-                  {feature.title}
-                </Typography>
-                <Typography variant="body1">
-                  {feature.description}
-                </Typography>
-              </Paper>
+          {featuresData.map((feature, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4}>
+              <Slide direction="left" in={index === activeFeatureIndex} mountOnEnter unmountOnExit>
+                <Card sx={{ height: '100%' }}>
+                  <CardContent>
+                    <Typography variant="h6" component="h3" gutterBottom>
+                      {feature.title}
+                    </Typography>
+                    <Typography variant="body2">
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Slide>
             </Grid>
           ))}
         </Grid>
       </Container>
     </Box>
+    </Box>
   );
 };
 
-export default Features;
+export default Features; 
+
+
+
+
+
 

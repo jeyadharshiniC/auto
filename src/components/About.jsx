@@ -22,7 +22,11 @@ const About = () => {
                 Our Mission
               </Typography>
               <Typography variant="body1">
-                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum repellendus exercitationem rerum incidunt quae totam doloribus consequatur! Laudantium magnam debitis consequatur eligendi nemo numquam a ratione! Praesentium distinctio quos asperiores, voluptatum perferendis maxime eaque cupiditate, quo ex delectus accusamus labore earum unde, reprehenderit aperiam placeat accusantium quisquam perspiciatis consequuntur similique. Id deserunt ipsam numquam quam!
+              The mission of electric vehicles (EVs) is to revolutionize transportation by significantly reducing greenhouse gas emissions and air pollution, thereby combating climate change and improving public health. EVs aim to enhance energy efficiency and decrease reliance on fossil fuels by promoting the use of renewable energy. They drive technological innovation and economic growth, providing long-term cost savings for consumers. Additionally, EVs support the development of smart cities and sustainable urban mobility solutions, contributing to a cleaner, more efficient, and equitable transportation system for a sustainable future.
+
+
+
+
               </Typography>
             </Paper>
           </Grid>
@@ -32,7 +36,7 @@ const About = () => {
                 Our Values
               </Typography>
               <Typography variant="body1">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt culpa consectetur omnis commodi amet similique minima vel ab quibusdam provident, quaerat veritatis maxime, ea soluta error delectus? Expedita ipsam, praesentium, pariatur ducimus repellendus reiciendis numquam quisquam tenetur doloribus exercitationem sunt soluta fugit distinctio quo iste ab. Accusantium culpa blanditiis officia.
+              Our vision transcends mere transportation. We envision a world where mobility is seamless, sustainable, and accessible to all. Through innovative technology and relentless dedication, we aim to redefine the way people move, empowering communities and shaping the future of urban living. With a commitment to environmental stewardship and social responsibility, we strive to create a greener, more inclusive world where every journey is safe, efficient, and enjoyable. Join us on this transformative journey as we revolutionize mobility, driving progress and prosperity for generations to come. Together, let's build a brighter, more connected future for all.
               </Typography>
             </Paper>
           </Grid>
@@ -42,7 +46,7 @@ const About = () => {
                 About Us
               </Typography>
               <Typography variant="body1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt alias animi blanditiis, iste, qui corrupti quas impedit illo excepturi a quae culpa autem voluptate. Eos laboriosam esse, aperiam itaque harum reprehenderit sed cumque iure, atque accusamus maxime dolorem culpa doloremque nobis, commodi nihil repellendus assumenda! Excepturi adipisci corporis sequi commodi aliquid tempore repellat dignissimos officiis. Labore est et, cumque necessitatibus molestiae provident deserunt sint delectus alias quasi, illum eaque? Accusamus doloribus rerum iste quae tempore consequatur earum tempora, minus modi nesciunt in voluptatum obcaecati a et hic provident maiores eius molestiae neque. Laborum eum commodi quia animi aliquid molestiae sequi.
+              Discover the future of urban mobility with @eauto Electric Autos. Our mission is to revolutionize transportation, offering eco-friendly, affordable, and convenient solutions for city dwellers. Powered by cutting-edge technology and sustainability, our electric autos provide a clean and efficient alternative to traditional petrol vehicles. Embrace convenience without compromising the environment, as we pave the way towards a greener tomorrow. Join us in our journey towards cleaner, smarter, and more accessible transportation options for all, as we strive to make every ride a sustainable and enjoyable experience.
               </Typography>
             </Paper>
           </Grid>
