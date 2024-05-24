@@ -1,4 +1,3 @@
-
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const About = () => {
@@ -55,12 +54,4 @@ const About = () => {
   );
 };
 
-export default About;
-
-
-
-
-
-
-
-
+export default About;

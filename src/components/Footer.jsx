@@ -13,7 +13,7 @@ const Footer = () => {
       component="footer"
       sx={{
         py: 4,
-        bgcolor: '#4caf50',
+        bgcolor: 'green',
         color: 'white',
         borderTop: '1px solid white',
       }}
@@ -49,5 +49,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer; 
 

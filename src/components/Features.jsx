@@ -1,80 +1,82 @@
+import React from 'react';
+import { Container, Grid, Typography, Paper, Box } from '@mui/material';
+import { styled, keyframes } from '@mui/system';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
+import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 
-import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Slide from '@mui/material/Slide';
+// Keyframes for animations
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
-const featuresData = [
-  {
-    title: 'Reliable Rides',
-    description: "Reliable Rides with @eauto ensure a safe and dependable travel experience. Our extensive network of drivers and vehicles guarantees timely and efficient service. Whether for daily commutes or special occasions, Ola prioritizes reliability, offering a seamless booking process, real-time tracking, and professional drivers for stress-free journeys every time.",
-  },
-  {
-    title: 'Safety First',
-    description: "Safety First - Your safety is our top priority. Our rides adhere to strict safety protocols, including regular vehicle inspections, background checks for drivers, and adherence to hygiene standards. We also provide in-app safety features like SOS buttons and live tracking to ensure a secure and worry-free journey.",
-  },
-  {
-    title: '24/7 Support',
-    description: "24/7 Support - @eauto is committed to providing round-the-clock assistance for all your needs. Our dedicated support team is available 24/7 to address any queries, issues, or emergencies. Whether you need help with a booking, have a question, or face an unexpected situation, we're here to support you anytime, anywhere.",
-  },
-];
+// Styled components
+const AnimatedPaper = styled(Paper)`
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  color: Black;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  animation: ${slideInLeft} 1s ease-in-out;
+`;
 
-const Features = () => {
-  const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
+const IconWrapper = styled(Box)`
+  margin-bottom: 10px;
+  & svg {
+    font-size: 50px;
+    color: green;
+  }
+`;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFeatureIndex((prevIndex) => (prevIndex + 1) % featuresData.length);
-    }, 5000); 
+const Feature = ({ icon, title, description }) => (
+  <Grid item xs={12} sm={4}>
+    <AnimatedPaper elevation={3}>
+      <IconWrapper>{icon}</IconWrapper>
+      <Typography variant="h6" component="div">
+        {title}
+      </Typography>
+      <Typography variant="body1" component="div">
+        {description}
+      </Typography>
+    </AnimatedPaper>
+  </Grid>
+);
 
-    return () => clearInterval(interval);
-  }, []);
-
+const FeaturesSection = () => {
   return (
-    <Box
-    py={3} 
-    bgcolor= '#4caf50' 
-    color= '#4caf50'
-    overflow='hidden'
-    position='relative'
-  >
-    <Box sx={{ py: 5, bgcolor: '#e8f5e9', color:'#4caf50' }}>
-      <Container maxWidth="lg">
-        <Typography variant="h4" component="h2" gutterBottom align="center">
-          Our Features
-        </Typography>
-        <Grid container spacing={4}>
-          {featuresData.map((feature, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <Slide direction="left" in={index === activeFeatureIndex} mountOnEnter unmountOnExit>
-                <Card sx={{ height: '100%' }}>
-                  <CardContent>
-                    <Typography variant="h6" component="h3" gutterBottom>
-                      {feature.title}
-                    </Typography>
-                    <Typography variant="body2">
-                      {feature.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Slide>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
-    </Box>
+    <Container sx={{ py: 5 }}>
+      <Typography variant="h4" component="div" sx={{ mb: 5, textAlign: 'center', color: 'green' }}>
+        Our Features
+      </Typography>
+      <Grid container spacing={3}>
+        <Feature
+          icon={<DirectionsCarIcon />}
+          title="Ride Anywhere"
+          description="Get a ride to wherever you need to go with our reliable services."
+        />
+        <Feature 
+          icon={<LocalTaxiIcon />}
+          title="Affordable Taxis"
+          description="Affordable and convenient taxi services at your fingertips."
+        />
+        <Feature
+          icon={<ElectricCarIcon />}
+          title="Eco-Friendly"
+          description="Travel in eco-friendly electric cars for a sustainable future."
+        />
+      </Grid>
+    </Container>
   );
 };
 
-export default Features; 
-
-
-
-
-
-
+export default FeaturesSection;
