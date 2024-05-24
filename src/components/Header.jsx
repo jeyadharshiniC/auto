@@ -87,6 +87,8 @@ const BouncingIcon = styled(IconButton)`
 
 const Header = () => {
   return (
+    <AppBar position="sticky" sx={{ bgcolor: '#4CAF50' }}>
+
     <AnimatedAppBar position="static">
       <Toolbar>
         <BouncingIcon
@@ -108,6 +110,7 @@ const Header = () => {
         </Box>
       </Toolbar>
     </AnimatedAppBar>
+    </AppBar>
   );
 };
 
