@@ -1,4 +1,4 @@
-// src/components/Contact.js
+
 import React from 'react';
 import { Box, Container, Typography, Grid, TextField, Button } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
@@ -15,9 +15,9 @@ const Contact = () => {
     >
       <Container maxWidth="lg">
         <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ color: '#4caf50' }}>
-          Contact Us
+          Contact Us  
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={4}> 
           <Grid item xs={12} md={6}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <EmailIcon sx={{ fontSize: 40, mr: 2, color: '#4caf50' }} />

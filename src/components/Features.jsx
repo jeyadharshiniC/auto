@@ -69,12 +69,12 @@ const FeaturesSection = () => {
           title="Affordable Taxis"
           description="Affordable and convenient taxi services at your fingertips."
         />
-        <Feature
+        <Feature 
           icon={<ElectricCarIcon />}
           title="Eco-Friendly"
           description="Travel in eco-friendly electric cars for a sustainable future."
         />
-      </Grid>
+      </Grid>  
     </Container>
   );
 };

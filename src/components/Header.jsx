@@ -1,14 +1,22 @@
-import React from 'react';
+import React,{useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import MenuIcon from '@mui/icons-material/Menu';
+
+
+
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material'; 
 
 import { styled, keyframes } from '@mui/system';
-import { Box } from '@mui/material';
+import { Box } from '@mui/material'; 
 
-// Keyframes for animations
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -55,7 +63,7 @@ const pulse = keyframes`
   }
 `;
 
-// Styled components with animations
+
 const AnimatedAppBar = styled(AppBar)`
   background-color: green;
   animation: ${fadeIn} 1s ease-in-out;
@@ -86,6 +94,18 @@ const BouncingIcon = styled(IconButton)`
 `;
 
 const Header = () => {
+ 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <AppBar position="sticky" sx={{ bgcolor: '#4CAF50' }}>
 
@@ -97,21 +117,48 @@ const Header = () => {
           aria-label="menu"
           sx={{ mr: 2 }}
         >
+           
           
         </BouncingIcon>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          @eauto 
+          @e auto 
+          
         </Typography>
+        {isMobile ? (
+          <>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleMenuOpen}
+            >
+             
+            <MenuIcon />
+            </IconButton>
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+            >
+              <MenuItem onClick={handleMenuClose}>Home</MenuItem>
+              <MenuItem onClick={handleMenuClose}  >About</MenuItem>
+              <MenuItem onClick={handleMenuClose} >Featuress</MenuItem>
+              <MenuItem onClick={handleMenuClose} >Contact</MenuItem>
+            </Menu>
+          </>
+        ):(
         <Box>
-          <AnimatedButton color="inherit" sx={{ mr: 5 }}>Home</AnimatedButton>
-          <AnimatedButton color="inherit"sx={{ mr: 5 }}>About</AnimatedButton>
-          <AnimatedButton color="inherit"sx={{ mr: 5 }}>Features</AnimatedButton>
-          <AnimatedButton color="inherit"sx={{ mr: 5 }}>Contact</AnimatedButton>
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }} >Home</AnimatedButton>
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }}>About</AnimatedButton>
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }}>Features</AnimatedButton>
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }}>Contact</AnimatedButton>
         </Box>
+        )}
       </Toolbar>
     </AnimatedAppBar>
     </AppBar>
   );
 };
 
-export default Header;
+export default Header; 
+

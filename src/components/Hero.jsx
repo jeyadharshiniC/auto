@@ -24,17 +24,17 @@ const items = [
   {
     name: "Reliable Rides",
     description: "Get reliable and safe rides with our extensive network of drivers and vehicles.",
-    image: "https://images.unsplash.com/photo-1589712701903-f63c7452ccf4?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://lh3.googleusercontent.com/pw/AP1GczOndyYZzdjK0o7kHL_4qp6Qpexkao745PDWa3xMjUKXCOUxB8gJrMnx_llyuUcql5713PYKNLpTgPTDxg1yuq2wKokChe6LOrVd084eGpaIA_AIyeeKJf7hcIJbNQ4VMmUaAruKlKn7MD-T5tp8bcUy=w1391-h928-s-no-gm?authuser=0"
   },
   {
     name: "Safety First", 
     description: "Your safety is our priority. We ensure all our rides adhere to strict safety standards.",
-    image: "https://sundayguardianlive.com/wp-content/uploads/2018/02/autos%20copy.jpg"
+    image:"https://lh3.googleusercontent.com/pw/AP1GczPMD3W8am_KmWsn67qUyddaiCgsDdzA9pCS0ACMcXSKOgqV2q8c1-dXhxV8z8JewrYvJI8lLz9v-Z6eq4X46u95e0MxCUZ7iwmBUzAlPB5W6QJ0yOPhht9ku8mjcfCXwxxS68-1dppyvTdvSavBJM0o=w1391-h928-s-no-gm?authuser=0"
   },
   {
     name: "24/7 Support",
     description: "Our support team is available 24/7 to assist you with any queries or issues.",
-    image: "https://media.istockphoto.com/id/1087079662/photo/auto-rickshaw-in-jodhpur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=SoMgiTfAd3EIc2zqZd1woYSlpy6Kl-I0yu0vi51EhdM="
+    image: "https://lh3.googleusercontent.com/pw/AP1GczNdz38Rg1ip3wMjTJbLe9VsqurnpQyQp3DyYoWJJBFO238bFQ51Dzbjt_x0RrfsU3-mKrhXJ4Pi7JN1N9GwIusbk3uQ-OePhVzlbEUrYc65mRY_BiENK3EnxIYiv_V3X1H1Qj0isj5Qe8rX4fEYI7Mq=w619-h928-s-no-gm?authuser=0"
   }
 ];
 
@@ -70,13 +70,13 @@ const HeroSection = () => {
               justifyContent: 'center',
               alignItems: 'center',
               color: 'white',
-              padding: '0 20px'
-            }}
+              padding: '0 20px' 
+            }}  
           >
-            <Typography variant="h3" component="h2" align="center" gutterBottom>
+            <Typography variant="h3" component="h2" align="center" gutterBottom sx={{fontFamily:'Playfair Display',color:'yellow',fontWeight:'bold'}}>
               {item.name}
             </Typography>
-            <Typography variant="h5" component="p" align="center">
+            <Typography variant="h5" component="p" align="center" sx={{fontFamily:'Lora'}}>
               {item.description}
             </Typography>
             <BouncingIcon
