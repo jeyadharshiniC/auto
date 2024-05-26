@@ -78,7 +78,7 @@ const HeroSection = () => {
             <Box
             position="center"
             bottom={0}
-            width="100%"
+            width="70%"
             bgcolor="rgba(0, 0, 0, 0.7)"  // Adjust transparency here
             color="white"
             p={2}
