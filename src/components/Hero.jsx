@@ -38,6 +38,8 @@ const items = [
   }
 ];
 
+
+
 const HeroSection = () => {
   return (
     <Box sx={{ position: 'relative' }}>
@@ -73,10 +75,20 @@ const HeroSection = () => {
               padding: '0 20px' 
             }}  
           >
-            <Typography variant="h3" component="h2" align="center" gutterBottom sx={{fontFamily:'Playfair Display',color:'yellow',fontWeight:'bold'}}>
+            <Box
+            position="center"
+            bottom={0}
+            width="100%"
+            bgcolor="rgba(0, 0, 0, 0.7)"  // Adjust transparency here
+            color="white"
+            p={2}
+            textAlign="center"
+          >
+           
+            <Typography variant="h3" component="h2" align="center" gutterBottom sx={{fontFamily:'Barlow+Condensed',color:'yellow',fontWeight:'bold'}}>
               {item.name}
             </Typography>
-            <Typography variant="h5" component="p" align="center" sx={{fontFamily:'Lora'}}>
+            <Typography variant="h5" component="p" align="center" sx={{fontFamily:'Montserrat'}}>
               {item.description}
             </Typography>
             <BouncingIcon
@@ -85,12 +97,22 @@ const HeroSection = () => {
           aria-label="menu"
           sx={{ mr: 2 }}
         >
-            <Button variant="contained" sx={{ mt: 4 }}>
+       
 
-              BOOK A RIDE
+      
+
+            <Button variant="contained" align="center" sx={{ mt: 2  }}>
+
+              Book a ride
               
             </Button>
+            
             </BouncingIcon>
+            </Box>
+
+            
+            
+            
           </Paper>
         ))}
       </Carousel>

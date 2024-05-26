@@ -22,8 +22,8 @@ const App = () => {
     <About />
     <Features />
     <Contact />
-    <Footer />
-      </div>
+    <Footer />
+    </div>
   );
 };
 
