@@ -6,6 +6,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Button from '@mui/material/Button';
+// import { useNavigate } from 'react-router-dom';
+import logo from './logo.png';
 
 const Footer = () => {
   return (
@@ -21,7 +23,7 @@ const Footer = () => {
       <Container maxWidth="lg" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Box>
           <Typography variant="h6" gutterBottom>
-            @e auto
+          <img src={logo} alt='logo' height={50} />
           </Typography>
          
         </Box>

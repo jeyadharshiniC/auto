@@ -101,7 +101,7 @@ const HeroSection = () => {
 
       
 
-            <Button variant="contained" align="center" sx={{ mt: 2  }}>
+            <Button variant="contained" align="center"  sx={{ backgroundColor: 'green',mt: 2  }}>
 
               Book a ride
               

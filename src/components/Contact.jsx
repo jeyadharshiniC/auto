@@ -1,65 +1,74 @@
+import React, { useState } from 'react';
+import { TextField, Button, Container, Typography } from '@mui/material';
+import axios from 'axios';
 
-import React from 'react';
-import { Box, Container, Typography, Grid, TextField, Button } from '@mui/material';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-const Contact = () => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('https://sheetdb.io/api/v1/4eoyk5kcvn77e', {
+        data: formData
+      });
+      if (response.status === 201) {
+        alert('Form submitted successfully');
+      } else {
+        alert('Error submitting form');
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+      alert('Error submitting form');
+    }
+  };
+
   return (
-    <Box
-      sx={{
-        py: 8,
-        bgcolor: '#e8f5e9',
-        color: 'black',
-      }}
-    >
-      <Container maxWidth="lg">
-        <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ color: '#4caf50' }}>
-          Contact Us  
-        </Typography>
-        <Grid container spacing={4}> 
-          <Grid item xs={12} md={6}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <EmailIcon sx={{ fontSize: 40, mr: 2, color: '#4caf50' }} />
-              <Typography variant="h6" gutterBottom>Email</Typography>
-            </Box>
-            <Typography variant="body1">support@.com</Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <PhoneIcon sx={{ fontSize: 40, mr: 2, color: '#4caf50' }} />
-              <Typography variant="h6" gutterBottom>Phone</Typography>
-            </Box>
-            <Typography variant="body1">9345861036 </Typography>
-            
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6" gutterBottom>Send us a Message</Typography>
-            <form>
-              <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                  <TextField label="Your Name" variant="outlined" fullWidth />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField label="Your Email" variant="outlined" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField label="Message" variant="outlined" multiline rows={4} fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <Button variant="contained" size="large" sx={{ bgcolor: '#4caf50', color: 'white' }}>
-                    Send
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+    <Container maxWidth="sm">
+      <Typography variant="h4" gutterBottom sx={{mt:4}}>
+        Contact Us
+      </Typography>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          label="Name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+          multiline
+          rows={4}
+        />
+        <Button type="submit" variant="contained"  sx={{ backgroundColor: 'green',mb:2}}>
+          Submit
+        </Button>
+      </form>
+    </Container>
   );
 };
 
-export default Contact;
-
-
+export default ContactForm;

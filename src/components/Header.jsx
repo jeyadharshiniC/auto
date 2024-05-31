@@ -7,7 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
-
+// import { useNavigate } from 'react-router-dom';
+import logo from './logo.png';
 
 
 import { useTheme } from '@mui/material/styles';
@@ -94,6 +95,17 @@ const BouncingIcon = styled(IconButton)`
 `;
 
 const Header = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+
  
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
@@ -106,11 +118,60 @@ const Header = () => {
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
+  const s1=()=>{
+    scrollToSection('home')
+  }
+  const s2=()=>{
+    scrollToSection('about')
+  }
+  const s3=()=>{
+    scrollToSection('features')
+  }
+  const s4=()=>{
+    scrollToSection('contact')
+  }
+  const j1 = () => { 
+   s1(); 
+   handleMenuClose(); 
+  };
+  const j2 = () => { 
+    s2(); 
+    handleMenuClose(); 
+   };
+   const j3 = () => { 
+    s3(); 
+    handleMenuClose(); 
+   };
+   const j4 = () => { 
+    s4(); 
+    handleMenuClose(); 
+   };
+   const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+`;
+const BouncingIcon = styled(IconButton)`
+  animation: ${bounce} 2s infinite;
+`;
+ 
+
+
+
+
   return (
-    <AppBar position="sticky" sx={{ bgcolor: '#4CAF50' }}>
+    <AppBar position="sticky" sx={{bgcolor:'green'}}>
 
     <AnimatedAppBar position="static">
-      <Toolbar>
+      <Toolbar
+      
+      >
         <BouncingIcon
           edge="start"
           color="inherit"
@@ -121,7 +182,9 @@ const Header = () => {
           
         </BouncingIcon>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          @e auto 
+          
+        <img src={logo} alt='logo' height={55} />
+        
           
         </Typography>
         {isMobile ? (
@@ -139,19 +202,58 @@ const Header = () => {
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
+             PaperProps={{
+                style: {
+                  width: '100vw',
+                  height: '100vh',
+                  display: 'flex',
+                   flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                  backgroundColor: 'rgba(0,0,0,0.9)',
+                },
+              }}
             >
-              <MenuItem onClick={handleMenuClose}>Home</MenuItem>
-              <MenuItem onClick={handleMenuClose}  >About</MenuItem>
-              <MenuItem onClick={handleMenuClose} >Featuress</MenuItem>
-              <MenuItem onClick={handleMenuClose} >Contact</MenuItem>
+               <AnimatedButton onClick={j1}  sx={{color:'white',fontWeight:'bold'}}  >Home</AnimatedButton>
+             
+               <AnimatedButton   onClick={j2} sx={{color:'white',fontWeight:'bold'}} >About</AnimatedButton>
+               <AnimatedButton onClick={j3}  sx={{color:'white',fontWeight:'bold'}} >Features</AnimatedButton>
+               <AnimatedButton onClick={j4}  sx={{color:'white',fontWeight:'bold'}} >Contact</AnimatedButton>
+               <BouncingIcon
+          edge="start"
+          color='#4caf50'
+          aria-label="menu"
+          sx={{ mr: 2 }}
+        >
+              <Button variant="contained" align="center"  sx={{ backgroundColor:'#00a152', ml:15 }}>
+
+              Book a ride
+              
+            </Button>
+            </BouncingIcon>
+           
+            
             </Menu>
           </>
         ):(
         <Box>
-          <AnimatedButton color="inherit"  sx={{ mr: 5 }} >Home</AnimatedButton>
-          <AnimatedButton color="inherit"  sx={{ mr: 5 }}>About</AnimatedButton>
-          <AnimatedButton color="inherit"  sx={{ mr: 5 }}>Features</AnimatedButton>
-          <AnimatedButton color="inherit"  sx={{ mr: 5 }}>Contact</AnimatedButton>
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }} onClick={() => scrollToSection('home')} >Home</AnimatedButton>
+         
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }} onClick={() => scrollToSection('about')}>About</AnimatedButton>
+         
+          <AnimatedButton color="inherit"  sx={{ mr: 5 }}  onClick={() => scrollToSection('features')}>Features</AnimatedButton>
+          
+         
+           <AnimatedButton color="inherit"  sx={{ mr: 5 }}  onClick={() => scrollToSection('contact')}>Contact</AnimatedButton> 
+           
+       
+          <Button variant="contained" align="center"  sx={{ backgroundColor: '#00a152'}}>
+
+              Book a ride
+              
+            </Button>
+            
+          
         </Box>
         )}
       </Toolbar>
@@ -160,5 +262,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
-
+export default Header;

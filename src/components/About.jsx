@@ -34,7 +34,7 @@ const About = () => {
                 Our Values
               </Typography>
               <Typography variant="body1" sx={{fontFamily:'Open Sans'}}>
-              Our vision transcends mere transportation. We envision a world where mobility is seamless, sustainable, and accessible to all. Through innovative technology and relentless dedication, we aim to redefine the way people move, empowering communities and shaping the future of urban living. With a commitment to environmental stewardship and social responsibility, we strive to create a greener, more inclusive world where every journey is safe, efficient, and enjoyable. Join us on this transformative journey as we revolutionize mobility, driving progress and prosperity for generations to come. Together, let's build a brighter, more connected future for all.
+              Our vision transcends mere transportation. We envision a world where mobility is seamless, sustainable, and accessible to all. Through innovative technology and relentless dedication, we aim to redefine the way people move, empowering communities and shaping the future of urban living. With a commitment to environmental stewardship and social responsibility, we strive to create a greener, more inclusive world where every journey is safe, efficient, and enjoyable. Join us on this transformative journey as we revolutionize mobility, driving progress and prosperity for generations to come.
               </Typography>
             </Paper>
           </Grid>
