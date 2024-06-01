@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+
 import MenuIcon from '@mui/icons-material/Menu';
 // import { useNavigate } from 'react-router-dom';
 import logo from './logo.png';
@@ -40,17 +40,7 @@ const slideInLeft = keyframes`
   }
 `;
 
-const bounce = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-`;
+
 
 const pulse = keyframes`
   0% {
@@ -87,6 +77,17 @@ const AnimatedButton = styled(Button)`
   }
   &:hover {
     animation: ${pulse} 0.5s infinite;
+  }
+`;
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
   }
 `;
 
@@ -146,20 +147,8 @@ const Header = () => {
     s4(); 
     handleMenuClose(); 
    };
-   const bounce = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-`;
-const BouncingIcon = styled(IconButton)`
-  animation: ${bounce} 2s infinite;
-`;
+ 
+
  
 
 
@@ -172,15 +161,7 @@ const BouncingIcon = styled(IconButton)`
       <Toolbar
       
       >
-        <BouncingIcon
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-           
-          
-        </BouncingIcon>
+        
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           
         <img src={logo} alt='logo' height={55} />
@@ -230,7 +211,8 @@ const BouncingIcon = styled(IconButton)`
               Book a ride
               
             </Button>
-            </BouncingIcon>
+            </BouncingIcon >
+           
            
             
             </Menu>
