@@ -1,11 +1,12 @@
 
-import React ,{useState}from 'react';
+import React,{useState} from 'react';
 import { Box, Container, Typography, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Button from '@mui/material/Button';
+
 
 import logo from './logo.png';
 
@@ -14,17 +15,19 @@ import logo from './logo.png';
 
 
 const Footer =()=>{
-  const [ showComponents,setShowComponents] = useState(true);
-  
+  const [showComponents, setShowComponents] = useState(true);
   const handleSignInClick = () => {
     setShowComponents(false);
     window.open('/login', '_blank');
   };
+ 
   
  
 
   
   return (
+    
+    
     <Box
       component="footer"
       sx={{
@@ -41,6 +44,26 @@ const Footer =()=>{
           </Typography>
          
         </Box>
+        {showComponents && (
+                <div>
+               
+                  <section id="home">
+                 
+                </section>
+                <section id="about">
+                
+                </section>
+                <section id="features">
+                 
+                </section>
+                <section id="contact">
+                
+                </section> 
+                
+                  <Footer onClick={handleSignInClick} />
+                 
+                </div>
+              )}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
            <Button variant="outlined" onClick={handleSignInClick} color="inherit" sx={{ mr: 2 }}> 
           Sign In
@@ -59,7 +82,10 @@ const Footer =()=>{
           </IconButton>
         </Box>
       </Container>
+      
     </Box>
+    
+        
   );
 };
 

@@ -4,7 +4,7 @@ import Header from './components/Header';
   import Features from './components/Features';
  import Footer from './components/Footer';
 import Contact from './components/Contact';
-import {BrowserRouter,Routes,Route}from 'react-router-dom';
+import {Routes,Route}from 'react-router-dom';
  import About from './components/About'; 
 
 import Login from './components/Login';
@@ -28,7 +28,8 @@ const App = () => {
  
  
   return (
-    <BrowserRouter>
+   
+    
     <Routes>
     
     <Route
@@ -71,7 +72,7 @@ const App = () => {
       
       
       
-   
+       
    
     
    
@@ -79,7 +80,7 @@ const App = () => {
     
    
                     
-    </BrowserRouter>
+    
   );
 }
 export default App;

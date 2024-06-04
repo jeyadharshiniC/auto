@@ -10,6 +10,7 @@ import '@fontsource/lobster'; // Import Lobster font
 import '@fontsource/open-sans'; // Import Open Sans font
 import '@fontsource/lora'; // Import Lora font
 import '@fontsource/poppins'; // Import Poppins font
+import { BrowserRouter } from "react-router-dom";
 
 
 const theme = createTheme({
@@ -54,7 +55,9 @@ ReactDOM.render(
   <React.StrictMode>
      <ThemeProvider theme={theme}>
     <CssBaseline />
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
   </ThemeProvider>,
   </React.StrictMode>,
   document.getElementById('root')
