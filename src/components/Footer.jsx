@@ -8,6 +8,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Button from '@mui/material/Button';
 
 
+
+
 import logo from './logo.png';
 
 
@@ -54,16 +56,21 @@ const Footer =()=>{
                 
                 </section>
                 <section id="features">
-                 
+               
                 </section>
                 <section id="contact">
                 
                 </section> 
                 
-                  <Footer onClick={handleSignInClick} />
+                 
                  
                 </div>
               )}
+                  
+       
+                
+                 
+                
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
            <Button variant="outlined" onClick={handleSignInClick} color="inherit" sx={{ mr: 2 }}> 
           Sign In
