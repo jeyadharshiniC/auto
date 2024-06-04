@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React ,{useState}from 'react';
 import { Box, Container, Typography, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -13,7 +13,13 @@ import logo from './logo.png';
 
 
 
-const Footer =({onSignIn})=>{
+const Footer =()=>{
+  const [ showComponents,setShowComponents] = useState(true);
+  
+  const handleSignInClick = () => {
+    setShowComponents(false);
+    window.open('/login', '_blank');
+  };
   
  
 
@@ -36,7 +42,7 @@ const Footer =({onSignIn})=>{
          
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-           <Button variant="outlined"onClick={onSignIn} color="inherit" sx={{ mr: 2 }}> 
+           <Button variant="outlined" onClick={handleSignInClick} color="inherit" sx={{ mr: 2 }}> 
           Sign In
           </Button>
           <IconButton href="#" target="_blank" rel="noopener" aria-label="Facebook">
